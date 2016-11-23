@@ -60,7 +60,6 @@ set shiftwidth=4
 "------ Console UI & Text display ------
 set cursorline          " highlight the current line
 set showcmd             " show partial command in the bot-right
-set noshowmode          " the *line plugin should take care of this
 set scrolloff=8         " start scrolling when within these many lines of edge
 set report=0            " always report how many lines were changed
 set shortmess=filmnrxI  " make sure exactly these options are set
@@ -69,6 +68,9 @@ set listchars=tab:»\ ,trail:·   " symbols for whitespaces
 set wildmenu                    " enable cycling through tab completion options
 set wildmode=list:longest,full
 set wildignorecase              " ignore case when autocompleting
+" vup:
+set laststatus=1
+set ruler
 
 " Ignore these files when autocompleting.
 set wildignore=*.obj,*.o,*~,*.pyc
@@ -120,6 +122,10 @@ endif
 nnoremap <silent> <c-s> :w!<cr>
 nnoremap <silent> <leader>w :w!<cr>
 cnoremap w!! SudoWrite sudo:%
+
+" vup: C-a visual all, C-q increment
+nnoremap <silent> <c-a> gg0VG$
+nnoremap <silent> <c-q> <c-a>
 
 " Make typing commands easier. Easy-motion should be enough for navigation, but
 " we still keep the functionality of the semicolon.
@@ -206,7 +212,7 @@ function! ToggleTabLineNumbers()
 
     let t:__old_linenumbers=!t:__old_linenumbers
 endfunction
-nnoremap <silent> <f4> :call ToggleTabLineNumbers()<cr><esc>
+nnoremap <silent> <f8> :call ToggleTabLineNumbers()<cr><esc>
 
 
 if has('nvim')
