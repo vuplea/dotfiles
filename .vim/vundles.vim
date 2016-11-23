@@ -95,10 +95,11 @@ Plugin 'vim-scripts/sudo.vim'
 " Lean & mean status/tabline for vim that's light as air
 " install the font Hack to make it work properly:
 " https://github.com/powerline/fonts/blob/master/Hack/
-Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline'
 
 " A collection of themes for vim-airline
-Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'vim-airline/vim-airline-themes'
+" REASON: Not for me
 
 " Swap your windows without ruining your layout
 Plugin 'wesQ3/vim-windowswap'
