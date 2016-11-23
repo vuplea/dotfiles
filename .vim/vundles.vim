@@ -23,7 +23,11 @@ Plugin 'VundleVim/Vundle.vim'
 " REASON: Hardcopy instead
 
 " Vim motions on speed!
-Plugin 'easymotion/vim-easymotion'
+" Plugin 'easymotion/vim-easymotion'
+" REASON: too old for this
+
+" Approximate colorschemes to 256 if necessary
+Plugin 'godlygeek/csapprox'
 
 " NERDTree and tabs together in Vim, painlessly
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -50,7 +54,8 @@ Plugin 'nvie/vim-flake8'
 Plugin 'Rename'
 
 " Use Vim as PAGER
-Plugin 'rkitover/vimpager'
+" Plugin 'rkitover/vimpager'
+" REASON: What does it do
 
 " Pasting in Vim with indentation adjusted to destination context
 Plugin 'sickill/vim-pasta'
@@ -74,10 +79,12 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 
 " A code-completion engine for Vim
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
+" REASON: Too heavyweight to have by default
 
 " AppleScript syntax highlighting
-Plugin 'vim-scripts/applescript.vim'
+" Plugin 'vim-scripts/applescript.vim'
+" REASON: dont need
 
 " An alternative indentation script for python
 Plugin 'vim-scripts/indentpython.vim'

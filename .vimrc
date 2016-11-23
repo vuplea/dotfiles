@@ -37,7 +37,7 @@ if has('persistent_undo')
 endif
 
 " Set the clipboard to the system clipboard.
-if has('clipboard')
+silent! if has('clipboard')
     set clipboard=unnamed,unnamedplus
 endif
 
@@ -98,7 +98,8 @@ set formatoptions=tcroqnj
 set backspace=indent,eol,start
 
 " Don't allow keys that move the cursor left/right to move it between lines.
-set whichwrap=
+" set whichwrap=
+" REASON: why
 
 
 "------ Vundle config ------
@@ -123,7 +124,9 @@ cnoremap w!! SudoWrite sudo:%
 " Make typing commands easier. Easy-motion should be enough for navigation, but
 " we still keep the functionality of the semicolon.
 noremap ; :
-noremap : ;
+" noremap ; :
+" REASON: easier like this:
+noremap \ ;
 
 " Quick replay 'q' macro and avoid Ex-mode.
 noremap Q <nop>
@@ -133,8 +136,9 @@ nnoremap Q @q
 nnoremap gh <nop>
 
 " Don't cancel visual select when shifting.
-vnoremap < <gv
-vnoremap > >gv
+" vnoremap < <gv
+" vnoremap > >gv
+" REASON: CANCEL PLS
 
 " Space toggles folds in normal mode (if any).
 nnoremap <silent> <space> @=(foldlevel('.')?'za':"\<space>")<cr>

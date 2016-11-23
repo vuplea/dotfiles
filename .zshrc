@@ -26,7 +26,8 @@ export LC_ALL="en_US.UTF-8"
 export BROWSER='firefox'
 export EDITOR='vi'
 export XDG_CONFIG_HOME=$HOME/.config
-export TERM=xterm-256color
+# export TERM=xterm-256color
+# REASON: NO
 
 if command -v vim > /dev/null; then
     export EDITOR='vim'
@@ -69,9 +70,12 @@ wd() {
   . ~/bin/wd/wd.sh
 }
 
-export PAGER=/usr/local/bin/vimpager
-alias less=$PAGER
-alias zless=$PAGER
+if command -v vimpager > /dev/null; then
+#    export PAGER=vimpager
+#    alias less=$PAGER
+#    alias zless=$PAGER
+# REASON: buggy for now
+fi
 
 # Nvim host control
 export PATH="$HOME/bin/:$PATH"
