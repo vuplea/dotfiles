@@ -19,7 +19,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Precision colorscheme for the vim text editor
-Plugin 'altercation/vim-colors-solarized'
+" Plugin 'altercation/vim-colors-solarized'
+" REASON: Hardcopy instead
 
 " Vim motions on speed!
 Plugin 'easymotion/vim-easymotion'

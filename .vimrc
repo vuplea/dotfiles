@@ -16,6 +16,7 @@ endif
 
 
 "------ General ------
+colorscheme solarized
 set nofoldenable        " unfold everything when opening a file
 set foldmethod=indent   " define folds by indentation
 set hidden              " don't unload buffers not open in any window
