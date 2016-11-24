@@ -213,7 +213,7 @@ function! ToggleTabLineNumbers()
 
     let t:__old_linenumbers=!t:__old_linenumbers
 endfunction
-nnoremap <silent> <f8> :call ToggleTabLineNumbers()<cr><esc>
+nnoremap <silent> <f4> :call ToggleTabLineNumbers()<cr><esc>
 
 
 if has('nvim')
