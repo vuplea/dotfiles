@@ -1,0 +1,20 @@
+let mapleader=","
+map ; :
+noremap <C-a> gg0vG$
+noremap <C-q> <C-v>
+
+set showcmd
+set number
+set ruler
+set scrolloff=3
+set list
+set listchars=tab:·\ ,trail:·
+set report=0
+set wildmenu
+set wildmode=list:longest
+set splitbelow
+set splitright
+set foldlevelstart=99
+set foldmethod=indent
+set clipboard=unnamed
+set hls

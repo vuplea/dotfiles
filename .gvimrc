@@ -1,12 +1,9 @@
-set guioptions-=m  " remove menu bar
-set guioptions-=T  " remove toolbar
-set guioptions-=r  " remove right-hand scroll bar
-set guioptions-=L  " remove left-hand scroll bar
+set guioptions=
 
 
 if has("gui_win32")
-    set guifont=Hack:h12:cDEFAULT   " font options
-    set linespace=2                 " pixels between lines
+    set guifont=Consolas:h11:cDEFAULT   " font options
+    set linespace=-1                 " pixels between lines
 
     noremap <silent> <f11> <esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
 
