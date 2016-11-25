@@ -35,7 +35,7 @@ antigen bundle sudo
 antigen bundle wd
 antigen bundle z
 antigen bundle nilsonholger/osx-zsh-completions
-# antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -43,18 +43,15 @@ antigen apply
 
 # Vars, aliases
 export LC_ALL="en_US.UTF-8"
-export BROWSER='firefox'
-export EDITOR='vi'
 export XDG_CONFIG_HOME=$HOME/.config
-# export TERM=xterm-256color
-# REASON: NO
+export PATH="$HOME/bin/:$PATH"
 
-if command -v vim > /dev/null; then
-    export EDITOR='vim'
-    alias vi='vim'
+# Set neovim up
+if check_com -c vimpager; then
+    export PAGER='vimpager'
 fi
 
-if command -v nvim > /dev/null; then
+if check_com -c nvim; then
     export EDITOR='nvim'
     alias vi='nvim'
     alias vim='nvim'
@@ -63,99 +60,18 @@ if command -v nvim > /dev/null; then
         [[ $NVIM_LISTEN_ADDRESS ]] && ~/bin/neovim-autocd.py
     }
     chpwd_functions+=( neovim_autocd )
-fi
 
-remake() {
-    make clean || return $?
-    if [[ $# == 0 ]]; then
-        make
-    else
-        make $@
+    if [[ $NVIM_LISTEN_ADDRESS ]] && check_com -c nvim-host-cmd; then
+        alias v=nvim-host-cmd
+        alias e='nvim-host-cmd edit'
+        alias tabe='nvim-host-cmd tabedit'
+        alias sp='nvim-host-cmd split'
+        alias vsp='nvim-host-cmd vsplit'
+        alias bosp='nvim-host-cmd botright split'
     fi
-}
-
-weather() {
-        curl -4 "http://wttr.in/$1"
-}
-
-if command -v bpython > /dev/null; then
-    python() {
-        if [[ $# == 0 ]]; then
-            bpython
-        else
-            command python $@
-        fi
-    }
 fi
 
 # needed by the wd plugin
 wd() {
   . ~/bin/wd/wd.sh
 }
-
-if command -v vimpager > /dev/null; then
-#    export PAGER=vimpager
-#    alias less=$PAGER
-#    alias zless=$PAGER
-# REASON: buggy for now
-fi
-
-# Nvim host control
-export PATH="$HOME/bin/:$PATH"
-if command -v nvim-host-cmd > /dev/null; then
-    v() {
-        if [[ $# == 0 ]]; then
-            return 0;
-        fi
-
-        arg="$1"
-
-        if [[ $# > 0 ]]; then
-            shift
-            for i in "$@"; do
-                if [[ -f "$i" ]]; then
-                    i=`realpath $i | sed 's/ /\\ /g'`
-                fi
-                arg="$arg $i"
-            done
-        fi
-        nvim-host-cmd $arg
-    }
-    e() {
-        if [[ $# == 1 ]]; then
-            file=`realpath $1 | sed 's/ /\\ /g'`
-        fi
-        arg="edit $file"
-        nvim-host-cmd $arg
-    }
-    tabe() {
-        if [[ $# == 1 ]]; then
-            file=`realpath $1 | sed 's/ /\\ /g'`
-        fi
-        arg="tabedit $file"
-        nvim-host-cmd $arg
-    }
-    sp() {
-        if [[ $# == 1 ]]; then
-            file=`realpath $1 | sed 's/ /\\ /g'`
-        fi
-        arg="split $file"
-        nvim-host-cmd $arg
-    }
-    vsp() {
-        if [[ $# == 1 ]]; then
-            file=`realpath $1 | sed 's/ /\\ /g'`
-        fi
-        arg="vsplit $file"
-        nvim-host-cmd $arg
-    }
-    nerd() {
-        if [[ $# == 1 ]]; then
-            file=`realpath $1 | sed 's/ /\\ /g'`
-        else
-            file=`realpath .`
-        fi
-        arg='execute "Bdelete!" | NERDTree '$file
-        nvim-host-cmd $arg
-    }
-fi
