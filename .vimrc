@@ -58,7 +58,8 @@ set shiftwidth=4
 
 
 "------ Console UI & Text display ------
-set cursorline          " highlight the current line
+" set cursorline          " highlight the current line
+" REASON: NOT FOR NOW, ugly
 set showcmd             " show partial command in the bot-right
 set scrolloff=8         " start scrolling when within these many lines of edge
 set report=0            " always report how many lines were changed
