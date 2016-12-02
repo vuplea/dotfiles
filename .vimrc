@@ -149,7 +149,7 @@ nnoremap gh <nop>
 " REASON: CANCEL PLS
 
 " Space toggles folds in normal mode (if any).
-nnoremap <silent> <space> @=(foldlevel('.')?'za':"\<space>")<cr>
+nnoremap <silent> <space> @=(foldlevel('.')?'zA':"\<space>")<cr>
 
 set pastetoggle=<f2>
 
@@ -216,6 +216,8 @@ function! ToggleTabLineNumbers()
 endfunction
 nnoremap <silent> <f4> :call ToggleTabLineNumbers()<cr><esc>
 
+" Fold all toggle
+noremap <f5> zi
 
 if has('nvim')
     " Normal escape in terminal. Ctrl+Alt+e to send an Escape through.
