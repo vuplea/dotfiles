@@ -4,10 +4,7 @@ set runtimepath+=~/.vim/after
 
 
 "------ Encoding settings ------
-" Encoding in neovim is utf-8 by default and raises an error when resourcing.
-if !has('nvim')
-    set encoding=utf-8
-endif
+silent! set encoding=utf-8
 
 " Avoid an error when resourcing from an unmodifiable buffer.
 if &modifiable
@@ -27,14 +24,7 @@ set novisualbell        " never trigger an error flash
 set splitbelow          " a new horizontal split is placed below, not above
 set splitright          " a new vertical split is placed to the right, not left
 set timeoutlen=500      " wait these many milliseconds between a map's keys
-
-" Set persistent undo.
-" TODO cross-platform
-if has('persistent_undo')
-    silent !mkdir -p ~/.vim/temp_dirs/undodir > /dev/null 2>&1
-    set undodir=~/.vim/temp_dirs/undodir
-    set undofile
-endif
+set undofile            " set persistent undo.
 
 " Set the clipboard to the system clipboard.
 silent! if has('clipboard')
@@ -58,8 +48,6 @@ set shiftwidth=4
 
 
 "------ Console UI & Text display ------
-" set cursorline          " highlight the current line
-" REASON: NOT FOR NOW, ugly
 set showcmd             " show partial command in the bot-right
 set scrolloff=8         " start scrolling when within these many lines of edge
 set report=0            " always report how many lines were changed
@@ -70,7 +58,6 @@ set listchars=tab:»\ ,trail:·   " symbols for whitespaces
 set wildmenu                    " enable cycling through tab completion options
 set wildmode=list:longest,full
 set wildignorecase              " ignore case when autocompleting
-" vup:
 set laststatus=0
 set ruler
 
@@ -101,10 +88,6 @@ set formatoptions=tcroqnj
 " Allow backspace to delete indents, newlines and characters past insert-start.
 set backspace=indent,eol,start
 
-" Don't allow keys that move the cursor left/right to move it between lines.
-" set whichwrap=
-" REASON: why
-
 
 "------ Vundle config ------
 " We need to set the map leader before Vundle loads plugins & their settings.
@@ -129,32 +112,15 @@ cnoremap w!! SudoWrite sudo:%
 nnoremap <silent> <c-a> gg0VG$
 nnoremap <silent> <c-q> <c-a>
 
-" Make typing commands easier. Easy-motion should be enough for navigation, but
-" we still keep the functionality of the semicolon.
+" Make typing commands easier. We still keep the functionality of the semicolon.
 noremap ; :
-" noremap ; :
-" REASON: easier like this:
 noremap \ ;
-
-" Quick replay 'q' macro and avoid Ex-mode.
-noremap Q <nop>
-nnoremap Q @q
-
-" Disable select mode.
-nnoremap gh <nop>
-
-" Don't cancel visual select when shifting.
-" vnoremap < <gv
-" vnoremap > >gv
-" REASON: CANCEL PLS
 
 " Space toggles folds in normal mode (if any).
 nnoremap <silent> <space> @=(foldlevel('.')?'zA':"\<space>")<cr>
 
-set pastetoggle=<f2>
-
 " Some stuff breaks if $MYVIMRC is a symlink, so follow it.
-command! Ev execute 'tabedit ' . resolve(expand($MYVIMRC))
+command! Ev tabedit $MYVIMRC
 command! Sv source $MYVIMRC
 
 " Pressing * or # in visual mode searches for the current selection.
@@ -240,15 +206,6 @@ if has('nvim')
     tnoremap <silent> <f4> <c-\><c-n>:call ToggleTabLineNumbers()<cr>
 endif
 
-
-"------ Navigation shortcuts ------
-" Treat visually wrapped lines as multiple lines.
-noremap j gj
-noremap k gk
-
-" Swap functionalities with above.
-noremap gj j
-noremap gk k
 
 " The following mappings help with moving between splits & tabs and moving tabs
 " with the same shortcuts for regular and terminal buffers (if using nvim).
