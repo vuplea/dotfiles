@@ -1,3 +1,23 @@
+# Zsh quick shorcut ref
+hotkeys() {
+cat << XXX
+^a Beginning of line
+^e End of line
+^f Forward one character
+^b Back one character
+^h Delete one character
+%f Forward one word
+%b Back one word
+^w Delete one word
+^u Clear to beginning of line
+^k Clear to end of line
+^y Paste from Kill Ring
+^p Previous line in history
+^n Next line in history
+^o Execute command but keep line
+XXX
+}
+
 # GRML upstream
 [[ -f ~/.zsh/grml-arch.zsh ]] && source ~/.zsh/grml-arch.zsh
 
