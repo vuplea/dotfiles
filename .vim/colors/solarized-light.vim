@@ -1,7 +1,5 @@
 set background=light
-if !has('gui-running')
-    let g:solarized_termcolors=256
-endif
+
 " Avoid ugly display of tabs and trailing whitespaces.
 highlight! SpecialKey ctermbg=NONE guibg=NONE
 
