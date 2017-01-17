@@ -13,7 +13,7 @@ endif
 
 
 "------ General ------
-colorscheme molokai
+colorscheme vandy
 set foldlevel=9999      " unfold everything when opening a file
 set foldmethod=indent   " define folds by indentation
 set hidden              " don't unload buffers not open in any window
