@@ -1,4 +1,4 @@
-" Vundle plugin configuration
+" Plugin configurations
 "
 " All plugins here are sorted alphabetically (for lack of a better order), case
 " insensitive ('Ab' comes before 'ac' but after 'aa'). Case-sorting should
@@ -6,23 +6,13 @@
 "
 " The description provided above the plugin is (usually) the short description
 " from github and it should hopefully indicate the usefulness of a plugin.
-"
-"
-" To ignore plugin indent changes use:
-" filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve
 
 filetype off                  " required by vundle
 
-set runtimepath+=~/.vim/bundle/Vundle.vim
-set runtimepath+=~/.vim/vundles/
+set runtimepath+=~/.vim/plugins/Vundle.vim
+set runtimepath+=~/.vim/plugins/
 
-call vundle#begin()
+call vundle#begin('~/.vim/plugins/')
 
 " Syntax checking hacks for vim
 Plugin 'scrooloose/syntastic'
@@ -83,7 +73,7 @@ call vundle#end()
 
 filetype plugin indent on    " required by vundle
 " load all plugin settings
-let settings = expand($HOME . "/.vim/vundles.config/")
+let settings = expand($HOME . "/.vim/plugins.config/")
 for fpath in split(globpath(settings, '*.vim'), '\n')
     exe 'source' fpath
 endfor
