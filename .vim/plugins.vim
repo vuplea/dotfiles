@@ -21,7 +21,7 @@ Plug 'VundleVim/Vundle.vim'
 Plug 'godlygeek/csapprox'
 
 " BufExplorer Plugin for Vim
-Plug 'jlanzarotta/bufexplorer'
+Plug 'jlanzarotta/bufexplorer', { 'on': 'ToggleBufExplorer' }
 
 " Vim syntax highlighting for c, bison, flex
 Plug 'justinmk/vim-syntax-extra'
@@ -30,13 +30,13 @@ Plug 'justinmk/vim-syntax-extra'
 Plug 'majutsushi/tagbar'
 
 " Delete buffers and close files in Vim without messing up your layout.
-Plug 'moll/vim-bbye'
+Plug 'moll/vim-bbye', { 'on': 'Bdelete' }
 
 " Better whitespace highlighting for Vim
 Plug 'ntpeters/vim-better-whitespace'
 
 " Rename a buffer within Vim and on disk
-Plug 'Rename'
+Plug 'Rename', { 'on': 'Rename' }
 
 " Pasting in Vim with indentation adjusted to destination context
 Plug 'sickill/vim-pasta'
@@ -45,7 +45,7 @@ Plug 'sickill/vim-pasta'
 Plug 'scrooloose/nerdcommenter'
 
 " A tree file explorer plugin
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 " Allows one to edit a file with privileges from an unprivileged session.
 Plug 'vim-scripts/sudo.vim'
@@ -60,7 +60,7 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 
 " A plugin of NERDTree showing git status
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 
 call plug#end()
 " load all plugin settings
