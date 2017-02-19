@@ -21,22 +21,14 @@ XXX
 # GRML upstream
 [[ -f ~/.zsh/grml-arch.zsh ]] && source ~/.zsh/grml-arch.zsh
 
-# Plugins
-[[ -f ~/.zsh/zplug/init.zsh ]] && source ~/.zsh/zplug/init.zsh
 
-zplug plugins/common-aliases,    from:oh-my-zsh
-zplug plugins/fancy-ctrl-z,  from:oh-my-zsh
-zplug plugins/git,   from:oh-my-zsh
-zplug plugins/last-working-dir,  from:oh-my-zsh
-zplug plugins/sudo,  from:oh-my-zsh
-zplug plugins/wd,    from:oh-my-zsh
-zplug plugins/z, from:oh-my-zsh
-zplug nilsonholger/osx-zsh-completions, if:"[[ $OSTYPE == *darwin* ]]"
-zplug zsh-users/zsh-autosuggestions
-zplug zsh-users/zsh-completions
-zplug zsh-users/zsh-history-substring-search
-zplug zsh-users/zsh-syntax-highlighting
-zplug load
+# Let the plugin manager load all the plugins.
+manager_path="$HOME/.zsh/zplug/init.zsh"
+plugins_path="$HOME/.zsh/plugins.zsh"
+if [[ -r "$manager_path" ]] && [[ -r "$plugins_path" ]]; then
+    source "$manager_path"
+    source "$plugins_path"
+fi
 
 # Vars, aliases
 export LC_ALL="en_US.UTF-8"
@@ -50,6 +42,7 @@ fi
 
 if check_com -c nvim; then
     export EDITOR='nvim'
+    export VIMPAGER_VIM='nvim'
     alias vi='nvim'
     alias vim='nvim'
 
