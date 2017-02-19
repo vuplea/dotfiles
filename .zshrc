@@ -59,8 +59,3 @@ if check_com -c nvim; then
         alias bosp='nvim-host-cmd botright split'
     fi
 fi
-
-# needed by the wd plugin
-wd() {
-  . ~/bin/wd/wd.sh
-}
