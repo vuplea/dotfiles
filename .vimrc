@@ -94,8 +94,7 @@ set backspace=indent,eol,start
 
 "------ Plugins config ------
 " We need to set the map leader before the plugins & their settings are loaded.
-" Comment this line when using a decent layout (UK), so that the leader is '\'.
-let mapleader=','
+let mapleader="\<space>"
 
 
 " Load all plugins.
