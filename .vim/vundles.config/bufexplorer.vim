@@ -1,5 +1,3 @@
-" Don't display help at the top
-let g:bufExplorerDefaultHelp=0
 " Always open the buffer in the bufexplorer window
 let g:bufExplorerFindActive=0
 let g:bufExplorerShowRelativePath=1
