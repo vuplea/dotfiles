@@ -1,13 +1,3 @@
-" Plugin configurations
-"
-" All plugins here are sorted alphabetically (for lack of a better order), case
-" insensitive ('Ab' comes before 'ac' but after 'aa'). Case-sorting should
-" occur only as a secondary criteria ('nAme' comes before 'name').
-"
-" The description provided above the plugin is (usually) the short description
-" from github and it should hopefully indicate the usefulness of a plugin.
-
-
 " Attempt to source the plugin manager.
 let manager_path=expand($HOME . "/.vim/plugins/vim-plug/plug.vim")
 if ! filereadable(manager_path)
@@ -23,12 +13,6 @@ Plug 'scrooloose/syntastic'
 
 " A code-completion engine for Vim
 Plug 'Valloric/YouCompleteMe'
-
-" let Vundle manage Vundle, required
-Plug 'VundleVim/Vundle.vim'
-
-" Approximate colorschemes to 256 if necessary
-Plug 'godlygeek/csapprox'
 
 " BufExplorer Plugin for Vim
 Plug 'jlanzarotta/bufexplorer', { 'on': 'ToggleBufExplorer' }
