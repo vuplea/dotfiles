@@ -1,4 +1,4 @@
-" TODO check if necessary.
+" Vim wants _vim or something similar on windows.
 set runtimepath^=~/.vim
 set runtimepath+=~/.vim/after
 
