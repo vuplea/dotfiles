@@ -11,7 +11,7 @@
 !.vim/ftdetect/
 !.vim/ftdetect/*
 !.vim/after/
-!.vim/after/*
+!.vim/after/**
 !.vim/colors/
 !.vim/colors/*
 
