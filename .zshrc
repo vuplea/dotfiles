@@ -1,3 +1,4 @@
+export PATH="$HOME/llvm/build/bin/:$PATH"
 # Zsh quick shorcut ref
 hotkeys() {
 cat << XXX
@@ -58,4 +59,8 @@ if check_com -c nvim; then
         alias vsp='nvim-host-cmd vsplit'
         alias bosp='nvim-host-cmd botright split'
     fi
+fi
+
+if check_com -c screen && [[ $TERM == putty-256color ]]; then
+    screen -d -RR -O -T $TERM
 fi

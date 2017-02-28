@@ -85,11 +85,20 @@ install_ycm() {
 	set +x
 }
 
+install_screen() {
+	set -x
+
+	ln -fs `realpath ./.screenrc` ~
+
+	set +x
+}
+
 main() {
 	install_zsh
 	install_vim
 	install_pgdb
 	install_ycm
+	install_screen
 }
 
 if [[ $# == 0 ]]; then
