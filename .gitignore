@@ -24,6 +24,7 @@
 !.zsh/plugins.config/*
 
 !.gdbinit
+!.screenrc
 
 !gits/
 !gits/*

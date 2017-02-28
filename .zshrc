@@ -59,3 +59,7 @@ if check_com -c nvim; then
         alias bosp='nvim-host-cmd botright split'
     fi
 fi
+
+if check_com -c screen && [[ $TERM == putty-256color ]]; then
+    screen -d -RR -O -T $TERM
+fi
