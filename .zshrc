@@ -41,7 +41,9 @@ export PATH="$HOME/bin/:$PATH"
 # fi
 
 if check_com -c nvim; then
-    export EDITOR='nvim'
+    # The editor is set as vi/vim by grml-arch.
+    export EDITOR='nvim-host-editor'
+    export VISUAL='nvim-host-editor'
     export VIMPAGER_VIM='nvim'
     alias vi='nvim'
     alias vim='nvim'
