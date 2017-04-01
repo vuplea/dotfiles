@@ -6,7 +6,8 @@ endif
 exe 'source' manager_path
 
 
-call plug#begin('~/.vim/plugins/')
+" Silent to not show error if git is missing
+silent! call plug#begin('~/.vim/plugins/')
 
 " Syntax checking hacks for vim
 Plug 'scrooloose/syntastic'

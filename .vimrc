@@ -24,7 +24,8 @@ set novisualbell        " never trigger an error flash
 set splitbelow          " a new horizontal split is placed below, not above
 set splitright          " a new vertical split is placed to the right, not left
 set timeoutlen=500      " wait these many milliseconds between a map's keys
-set undofile            " set persistent undo.
+" Enable manually, annoying on windows
+" set undofile            " set persistent undo.
 
 " Set the clipboard to the system clipboard.
 silent! if has('clipboard')

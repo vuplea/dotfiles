@@ -8,3 +8,9 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_check_on_open=1
 " Don't run syntax checker when closing a window
 let g:syntastic_check_on_wq=0
+
+" Symbols
+let g:syntastic_error_symbol='>>'
+let g:syntastic_warning_symbol='>'
+let g:syntastic_style_warning_symbol='·'
+let g:syntastic_style_error_symbol='·'
