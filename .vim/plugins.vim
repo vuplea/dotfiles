@@ -12,13 +12,23 @@ call plug#begin('~/.vim/plugins/')
 Plug 'scrooloose/syntastic'
 
 " A code-completion engine for Vim
-Plug 'Valloric/YouCompleteMe'
+" Enable yourself, large and difficult to set up
+" Plug 'Valloric/YouCompleteMe'
 
 " BufExplorer Plugin for Vim
 Plug 'jlanzarotta/bufexplorer', { 'on': 'ToggleBufExplorer' }
 
 " Vim syntax highlighting for c, bison, flex
 Plug 'justinmk/vim-syntax-extra'
+
+" LateX plugin
+Plug 'xuhdev/vim-latex-live-preview'
+
+" GLSL highlighting
+Plug 'beyondmarc/glsl.vim'
+
+" Powershell highlighting
+Plug 'PProvost/vim-ps1'
 
 " Vim plugin that displays tags in a window, ordered by scope
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
