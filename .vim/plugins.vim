@@ -22,9 +22,6 @@ Plug 'jlanzarotta/bufexplorer', { 'on': 'ToggleBufExplorer' }
 " Vim syntax highlighting for c, bison, flex
 Plug 'justinmk/vim-syntax-extra'
 
-" LateX plugin
-Plug 'xuhdev/vim-latex-live-preview'
-
 " GLSL highlighting
 Plug 'beyondmarc/glsl.vim'
 
