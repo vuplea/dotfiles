@@ -34,9 +34,11 @@ export XDG_CONFIG_HOME=$HOME/.config
 export PATH="$HOME/bin/:$PATH"
 
 # Set neovim up
-if check_com -c vimpager; then
-    export PAGER='vimpager'
-fi
+
+# Vimpager off for now, too slow
+# if check_com -c vimpager; then
+    # export PAGER='vimpager'
+# fi
 
 if check_com -c nvim; then
     export EDITOR='nvim'
