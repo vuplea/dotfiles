@@ -86,8 +86,8 @@ set smartcase       " make search case-sensitive if it contains upper-case chars
 set hlsearch        " highlight search results
 set showmatch       " highlight matching bracket
 set matchtime=2     " tenths of a second to show the matching bracket
-set textwidth=0     " don't wrap lines
-set formatoptions=tcroqnj
+set textwidth=80
+set formatoptions=croqnj
 
 " Allow backspace to delete indents, newlines and characters past insert-start.
 set backspace=indent,eol,start
@@ -109,6 +109,8 @@ endif
 nnoremap <silent> <c-s> :w!<cr>
 nnoremap <silent> <leader>w :w!<cr>
 cnoremap w!! SudoWrite sudo:%
+set wildcharm=<tab>
+cnoremap <c-space> %:p:h/<tab>
 
 " vup: C-a visual all, C-q increment
 nnoremap <silent> <c-a> gg0VG$
