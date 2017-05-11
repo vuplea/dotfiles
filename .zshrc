@@ -42,11 +42,14 @@ export PATH="$HOME/bin/:$PATH"
 
 if check_com -c nvim; then
     # The editor is set as vi/vim by grml-arch.
-    export EDITOR='nvim-host-editor'
-    export VISUAL='nvim-host-editor'
     export VIMPAGER_VIM='nvim'
     alias vi='nvim'
     alias vim='nvim'
+
+    if [[ -w "$NVIM_LISTEN_ADDRESS" ]] && check_com -c nvim-host-editor; then
+        export EDITOR='nvim-host-editor'
+        export VISUAL='nvim-host-editor'
+    fi
 
     if [[ -w "$NVIM_LISTEN_ADDRESS" ]] && check_com -c nvim-host-cmd; then
         # Change nvim host's cwd when cd-ing from within a terminal.

@@ -13,8 +13,9 @@ silent! call plug#begin('~/.vim/plugins/')
 Plug 'scrooloose/syntastic'
 
 " A code-completion engine for Vim
-" Enable yourself, large and difficult to set up
-" Plug 'Valloric/YouCompleteMe'
+if has("unix")
+    Plug 'Valloric/YouCompleteMe'
+endif
 
 " BufExplorer Plugin for Vim
 Plug 'jlanzarotta/bufexplorer', { 'on': 'ToggleBufExplorer' }
