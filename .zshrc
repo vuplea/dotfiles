@@ -33,16 +33,17 @@ export LC_ALL="en_US.UTF-8"
 export XDG_CONFIG_HOME=$HOME/.config
 export PATH="$HOME/bin/:$PATH"
 
+# Set vim up
+if check_com -c vim; then
+    export EDITOR='vim'
+    export VISUAL='vim'
+    alias vi='vim'
+fi
+
 # Set neovim up
-
-# Vimpager off for now, too slow
-# if check_com -c vimpager; then
-    # export PAGER='vimpager'
-# fi
-
 if check_com -c nvim; then
-    # The editor is set as vi/vim by grml-arch.
-    export VIMPAGER_VIM='nvim'
+    export EDITOR='nvim'
+    export VISUAL='nvim'
     alias vi='nvim'
     alias vim='nvim'
 
@@ -67,6 +68,13 @@ if check_com -c nvim; then
     fi
 fi
 
+# Load local zshrc
+localzshrc_path="$HOME/.lzshrc"
+if [[ -r "$localzshrc_path" ]]; then
+    source "$localzshrc_path"
+fi
+
+# Start screen session if putty
 if check_com -c screen && [[ $TERM == putty-256color ]]; then
     screen -d -RR -O -T $TERM
 fi

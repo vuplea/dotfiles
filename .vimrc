@@ -35,8 +35,11 @@ endif
 " Enable filetype detection, scripts and indent-scripts.
 filetype plugin indent on
 
-" Max nvim terminal scrollback.
-let g:terminal_scrollback_buffer_size=100000
+" Nvim terminal settings.
+if has('nvim')
+    let g:terminal_scrollback_buffer_size=100000
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | exe 'terminal' | endif
+endif
 
 
 "------ Indents and tabs ------
