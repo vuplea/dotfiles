@@ -40,7 +40,7 @@ zplug "plugins/z", from:oh-my-zsh
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 
 # Fish-like autosuggestions for zsh
-#zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-autosuggestions"
 
 # Additional completion definitions for Zsh.
 zplug "zsh-users/zsh-completions"

@@ -8,13 +8,19 @@ noremap <silent> <f6> :YcmCompleter FixIt<cr>
 noremap <silent> <c-t> :YcmCompleter GetType<cr>
 
 " ctags and jump mappings too here, sorry
-noremap <f9> <c-]>
+set tagcase=match
+
+noremap <silent> <f9> :YcmCompleter GoTo<cr>
 noremap <silent> <a-space><f9> :tab sp<cr>:call feedkeys("\<f9>")<cr>
-noremap <silent> <leader><f9> :YcmCompleter GoTo<cr>
-noremap <silent> <a-space><leader><f9> :tab sp<cr>:call feedkeys("\<leader>\<f9>")<cr>
+
+noremap <leader><f9> g<c-]>
+noremap <silent> <a-space> <leader><f9> :tab sp<cr>:call feedkeys("\<leader>\<f9>")<cr>
+
 noremap <f10> <c-o>
 noremap <leader><f10> <c-t>
+
 noremap <f11> <c-i>
+
 noremap <silent> <f12> :YcmCompleter GoToInclude<cr>
 
 " Less commonly used mappings.

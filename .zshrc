@@ -50,6 +50,8 @@ if check_com -c nvim; then
     if [[ -w "$NVIM_LISTEN_ADDRESS" ]] && check_com -c nvim-host-editor; then
         export EDITOR='nvim-host-editor'
         export VISUAL='nvim-host-editor'
+        alias vi='nvim-host-editor'
+        alias vim='nvim-host-editor'
     fi
 
     if [[ -w "$NVIM_LISTEN_ADDRESS" ]] && check_com -c nvim-host-cmd; then
