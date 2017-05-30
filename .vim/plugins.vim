@@ -13,7 +13,7 @@ silent! call plug#begin('~/.vim/plugins/')
 Plug 'scrooloose/syntastic'
 
 " A code-completion engine for Vim
-if has("unix")
+if !has("windows")
     Plug 'Valloric/YouCompleteMe'
 endif
 
