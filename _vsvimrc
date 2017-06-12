@@ -1,20 +1,12 @@
 let mapleader=","
 map ; :
-noremap <C-a> gg0vG$
-noremap <C-q> <C-v>
+nnoremap <C-a> gg0vG$
+nnoremap <C-q> <C-v>
+nnoremap p pv`.=k
+nnoremap P Pv`.=k
+noremap ]p p
+noremap ]P P
 
-set showcmd
-set number
-set ruler
 set scrolloff=3
-set list
-set listchars=tab:·\ ,trail:·
-set report=0
-set wildmenu
-set wildmode=list:longest
-set splitbelow
-set splitright
-set foldlevelstart=99
-set foldmethod=indent
 set clipboard=unnamed
 set hls
