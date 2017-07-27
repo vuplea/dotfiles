@@ -123,6 +123,14 @@ nnoremap <silent> <c-q> <c-a>
 noremap ; :
 noremap \ ;
 
+" Treat visually wrapped lines as multiple lines.
+noremap j gj
+noremap k gk
+
+" Swap functionalities with above.
+noremap gj j
+noremap gk k
+
 " Space toggles folds in normal mode (if any).
 nnoremap <silent> <space> @=(foldlevel('.')?'zA':"\<space>")<cr>
 
