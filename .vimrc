@@ -1,22 +1,8 @@
-" Vim wants _vim or something similar on windows.
-set runtimepath^=~/.vim
-set runtimepath+=~/.vim/after
-
-
-"------ Encoding settings ------
-silent! set encoding=utf-8
-
-" Avoid an error when resourcing from an unmodifiable buffer.
-if &modifiable
-    set fileformats=unix,dos
-endif
-
-
 "------ General ------
 colorscheme vandy
 set foldlevel=9999      " unfold everything when opening a file
 set foldmethod=indent   " define folds by indentation
-set hidden              " don't unload buffers not open in any window
+set nohidden            " unload buffer when closing window
 set history=9999        " remember these many commands and searches
 set mouse=a             " enable mouse in normal, visual, insert, command-line
 set noerrorbells        " never trigger an error sound
@@ -24,8 +10,11 @@ set novisualbell        " never trigger an error flash
 set splitbelow          " a new horizontal split is placed below, not above
 set splitright          " a new vertical split is placed to the right, not left
 set timeoutlen=500      " wait these many milliseconds between a map's keys
-" Enable manually, annoying on windows
-" set undofile            " set persistent undo.
+set undofile            " set persistent undo.
+autocmd BufEnter,FocusGained * :checktime
+"
+"------ Encoding settings ------
+silent! set encoding=utf-8
 
 " Set the clipboard to the system clipboard.
 silent! if has('clipboard')
@@ -34,13 +23,6 @@ endif
 
 " Enable filetype detection, scripts and indent-scripts.
 filetype plugin indent on
-
-" Nvim terminal settings.
-if has('nvim')
-    let g:terminal_scrollback_buffer_size=100000
-    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | exe 'terminal' | endif
-endif
-
 
 "------ Indents and tabs ------
 set autoindent      " indent a newline using the current one's level
@@ -76,6 +58,11 @@ set wildignore+=*.out,*.exe,*.com
 set wildignore+=*DS_Store*
 set wildignore+=.git/*,.hg/*,.svn/*
 
+" Nvim terminal settings.
+if has('nvim')
+    let g:terminal_scrollback_buffer_size=100000
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | exe 'terminal' | endif
+endif
 
 "------ Text editing and searching behavior ------
 " Turn on syntax highlighting, keeping current settings.
@@ -107,10 +94,7 @@ if filereadable(plugins_path)
     exe 'source' plugins_path
 endif
 
-
 "------ User shortcuts, commands ------
-nnoremap <silent> <c-s> :w!<cr>
-nnoremap <silent> <leader>w :w!<cr>
 cnoremap w!! SudoWrite sudo:%
 set wildcharm=<tab>
 cnoremap <c-space> %:p:h/<tab>
@@ -131,10 +115,6 @@ noremap k gk
 noremap gj j
 noremap gk k
 
-" Space toggles folds in normal mode (if any).
-nnoremap <silent> <space> @=(foldlevel('.')?'zA':"\<space>")<cr>
-
-" Some stuff breaks if $MYVIMRC is a symlink, so follow it.
 command! Ev tabedit $MYVIMRC
 command! Sv source $MYVIMRC
 
@@ -163,7 +143,6 @@ command! -complete=command ToggleColorColumn call _ToggleColorColumn()
 
 nnoremap <silent> <f3> :ToggleColorColumn<cr>
 
-
 "------ Global shortcuts ------
 " Uniform mappings that can be used from neovim's terminal.
 
@@ -177,15 +156,6 @@ noremap <silent> <a-n> :tabedit<cr>
 
 " Both <f1> opening terminal help and highlighting are annoying.
 noremap <silent> <f1> <esc>:nohlsearch<cr>
-
-" Like windo but restore the current window and don't end in insert.
-function! _Windo(command)
-    let l:__current_window=winnr()
-    execute 'windo ' . a:command
-    stopinsert
-    execute l:__current_window . 'wincmd w'
-endfunction
-command! -nargs=+ -complete=command Windo call _Windo(<q-args>)
 
 " Toggle the line numbers of all windows in the current tab.
 " On first use, it will turn them on.

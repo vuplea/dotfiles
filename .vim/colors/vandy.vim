@@ -11,6 +11,7 @@ endif
 set t_Co=256
 let g:colors_name = "vandy"
 
+hi ColorColumn ctermbg=233
 "hi IncSearch -- no settings --
 "hi SignColumn -- no settings --
 "hi SpecialComment -- no settings --

@@ -9,6 +9,12 @@ exe 'source' manager_path
 " Silent to not show error if git is missing
 silent! call plug#begin('~/.vim/plugins/')
 
+" Case sensitive replace
+Plug 'tpope/vim-abolish'
+
+" Swap between header and source with :A
+Plug 'a.vim'
+
 " Syntax checking hacks for vim
 Plug 'scrooloose/syntastic'
 
