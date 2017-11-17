@@ -1,3 +1,7 @@
+" Vim wants _vim or something similar on windows.
+set runtimepath^=~/.vim
+set runtimepath+=~/.vim/after
+
 "------ General ------
 colorscheme vandy
 set foldlevel=9999      " unfold everything when opening a file
