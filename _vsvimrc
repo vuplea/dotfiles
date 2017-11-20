@@ -7,6 +7,7 @@ nnoremap <C-a> gg0vG$
 nnoremap <C-q> <C-v>
 nnoremap p pv`.=k
 nnoremap P Pv`.=k
+noremap <F1> :noh<CR>
 
 set scrolloff=3
 set clipboard=unnamed
