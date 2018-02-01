@@ -1,0 +1,24 @@
+[core]
+    autocrlf = true
+[credential]
+    helper = cache --timeout=36000
+
+[diff]
+    tool = vsdiffmerge
+[difftool]
+    prompt = true
+[difftool "vsdiffmerge"]
+    cmd = \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsDiffMerge.exe\" \"$LOCAL\" \"$REMOTE\" //t
+    keepbackup = false
+    trustexistcode = true
+
+[merge]
+    tool = vsdiffmerge
+[mergetool]
+    prompt = true
+[mergetool "vsdiffmerge"]
+    cmd = \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsDiffMerge.exe\" \"$LOCAL\" \"$REMOTE\" //t //m
+    keepbackup = false
+    trustexistcode = true
+[mergetool "kdiff3"]
+    path = C:\\Program Files\\KDiff3\\kdiff3.exe

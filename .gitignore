@@ -1,7 +1,9 @@
 " Function as a whitelist
 *
 
-" Allow vim stuff.
+!.gitignore
+!.gitconfig_common
+
 !.gvimrc
 !.vimrc
 !.vim/
@@ -15,7 +17,6 @@
 !.vim/colors/
 !.vim/colors/*
 
-" Allow zsh stuff.
 !.zshrc
 !.zsh/
 !.zsh/grml-arch.zsh
@@ -23,6 +24,7 @@
 !.zsh/plugins.config/
 !.zsh/plugins.config/*
 
+!VsDevEnv.ps1
 !.gdbinit
 !.screenrc
 
@@ -30,5 +32,3 @@
 !gits/*
 !bin/
 !bin/*
-
-!.gitignore

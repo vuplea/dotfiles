@@ -14,7 +14,6 @@ set novisualbell        " never trigger an error flash
 set splitbelow          " a new horizontal split is placed below, not above
 set splitright          " a new vertical split is placed to the right, not left
 set timeoutlen=500      " wait these many milliseconds between a map's keys
-set undofile            " set persistent undo.
 autocmd BufEnter,FocusGained * :checktime
 "
 "------ Encoding settings ------
