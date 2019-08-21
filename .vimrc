@@ -1,3 +1,7 @@
+set backupdir=.backup/,~/.backup/,/tmp//
+set directory=.swp/,~/.swp/,/tmp//
+set undodir=.undo/,~/.undo/,/tmp//
+
 " Vim wants _vim or something similar on windows.
 set runtimepath^=~/.vim
 set runtimepath+=~/.vim/after
@@ -17,7 +21,9 @@ set timeoutlen=500      " wait these many milliseconds between a map's keys
 autocmd BufEnter,FocusGained * :checktime
 "
 "------ Encoding settings ------
-silent! set encoding=utf-8
+set encoding=utf-8
+set fileencodings=utf-8,utf-16le
+set nofixendofline
 
 " Set the clipboard to the system clipboard.
 silent! if has('clipboard')
