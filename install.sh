@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 show_usage() {
 	cat <<- __EOF__
