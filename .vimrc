@@ -1,6 +1,6 @@
-set backupdir=.backup/,~/.backup/,/tmp//
-set directory=.swp/,~/.swp/,/tmp//
-set undodir=.undo/,~/.undo/,/tmp//
+set backupdir=~/.vim/.backup/,/tmp//
+set directory=~/.vim/.swap/,/tmp//
+set undodir=~/.vim/.undo/,/tmp//
 
 " Vim wants _vim or something similar on windows.
 set runtimepath^=~/.vim
