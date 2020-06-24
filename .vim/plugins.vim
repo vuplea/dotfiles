@@ -13,7 +13,7 @@ silent! call plug#begin('~/.vim/plugins/')
 Plug 'tpope/vim-abolish'
 
 " Swap between header and source with :A
-Plug 'a.vim'
+Plug 'vim-scripts/a.vim'
 
 " Syntax checking hacks for vim
 Plug 'scrooloose/syntastic'
@@ -45,7 +45,7 @@ Plug 'moll/vim-bbye', { 'on': 'Bdelete' }
 Plug 'ntpeters/vim-better-whitespace'
 
 " Rename a buffer within Vim and on disk
-Plug 'Rename', { 'on': 'Rename' }
+Plug 'vim-scripts/Rename', { 'on': 'Rename' }
 
 " Pasting in Vim with indentation adjusted to destination context
 Plug 'sickill/vim-pasta'
