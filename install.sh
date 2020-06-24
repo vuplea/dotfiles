@@ -9,7 +9,7 @@ show_usage() {
 	Arguments are of the form "install_XXX".
 
 	Example:
-	    $0 install_zsh install_gdb
+	    $0 install_zsh install_vim
 	__EOF__
 }
 
@@ -67,16 +67,6 @@ install_vim() {
 	set +x
 }
 
-install_pgdb() {
-	set -x
-
-	mkdir -p ~/gits
-	ln -fs `realpath ./gits/peda` ~/gits &> /dev/null
-	ln -fs `realpath ./.gdbinit` ~
-
-	set +x
-}
-
 install_ycm() {
 	set -x
 
@@ -96,7 +86,6 @@ install_screen() {
 main() {
 	install_zsh
 	install_vim
-	install_pgdb
 	install_ycm
 	install_screen
 }
